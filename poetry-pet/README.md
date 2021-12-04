@@ -3,7 +3,7 @@
 poetry new poetry-pet
 ```
 
-# Poetry commands useful for setting up envs
+## Poetry commands useful for setting up envs
 
 ```
 poetry env info
@@ -13,13 +13,13 @@ poetry add <package>
 poetry add -D <package>
 ```
 
-# Build docker image
+## Build docker image
 
 ```
 docker build -t nandhu_poetry . 
 ```
 
-# Run docker image as container
+## Run docker image as container
 ```
 docker run -i -t image:tag /bin/bash
 ```
