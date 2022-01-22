@@ -163,3 +163,30 @@ minikube stop
 ```
 
 
+### GCP deployment
+
+Create GCP Project and enable the necessary apis for the deployment. Also when we start gcloud, default context will go to gcloud cluster from minikube.
+
+
+Build
+```
+docker build -t gcr.io/kaggle-266516/nandhu-k8s-deploy:v1 .
+```
+
+Push
+```
+docker push gcr.io/kaggle-266516/nandhu-k8s-deploy:v1
+```
+
+Cluster creation
+```
+gcloud container clusters create <cluster name> --num-nodes 3 --machine-type g1-small --zone <zone name>
+```
+
+Redirects to gcloud context
+```
+kubectl config get-contexts
+```
+
+Now, we can create deployments and services(follow the above steps) and access the api using external IP
+

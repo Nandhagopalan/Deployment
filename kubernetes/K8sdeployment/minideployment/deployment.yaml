@@ -21,7 +21,7 @@ spec:
         app: test-ml-score-api
     spec:
       containers:
-      - image: nandhu/k8s-deploy:v1
+      - image: gcr.io/kaggle-266516/nandhu-k8s-deploy:v1 #nandhu/k8s-deploy:v1
         name: test-ml-score-api
         ports:
         - containerPort: 5000
