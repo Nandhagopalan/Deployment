@@ -1,0 +1,9 @@
+app:
+  name: test-ml-score
+  env: prod
+  namespace: test-ml-app
+  image: nandhu/k8s-deploy:v1
+
+replicas: 2
+containerPort: 5000
+targetPort: 5000

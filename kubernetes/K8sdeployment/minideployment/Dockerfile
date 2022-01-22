@@ -54,11 +54,12 @@ WORKDIR /workspace
 
 # Generate requirements and install *all* dependencies.
 COPY . /workspace
-RUN poetry export --dev --without-hashes --no-interaction --no-ansi -f requirements.txt -o requirements.txt
-RUN pip install --prefix=/runtime --force-reinstall -r requirements.txt
+RUN poetry install
+
+RUN chmod +x ./server.sh
 
 # Switch back to user
 USER user
 
-# Set the default command to bash
-CMD ["bash"]
+CMD ["./server.sh"]
+EXPOSE 5000

@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "k8s_deployment"
+version = "0.1.0"
+description = ""
+authors = ["Nandhagopalan <nandhu.elan@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+transformers = "^4.15.0"
+gunicorn = "^20.1.0"
+torch = [
+  {url = "https://download.pytorch.org/whl/cu113/torch-1.10.0%2Bcu113-cp38-cp38-linux_x86_64.whl", markers = "sys_platform == 'linux'"}
+]
+Flask = "^2.0.2"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
